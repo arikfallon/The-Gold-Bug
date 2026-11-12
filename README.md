@@ -1,2 +1,2 @@
-# The gold-bug
+# The Gold-Bug
 Allan Poe
