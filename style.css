@@ -1,253 +1,131 @@
-/* Faz o body ocupar toda a altura e organizar header, main e footer */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
-    color: #333;
-}
-
-header {
-    text-align: center;
-    background-color: #7b1fa2;
-    color: #fff;
-    padding: 30px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header p {
-    margin: 10px 0 0 0;
-    font-size: 1.3em;
-}
-
-nav {
+    background: #000;
+    color: #e3bd19;
+    font-family: Georgia, 'Times New Roman', serif;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background-color: #4a148c;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
 }
 
-nav button {
-    background-color: #7b1fa2;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav button:hover {
-    background-color: #311b92;
-}
-
-main {
-    flex: 1; /* ocupa o espaço disponível, empurrando o footer para baixo */
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
+.escaravelho {
+    position: fixed;
+    width: min(78vw, 760px);
+    height: 96vh;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.27;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .conteudo {
-    display: none;
-    animation: fadeIn 0.6s ease-in-out;
-}
-
-h2 {
-    color: #4a148c;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.2em;
-    line-height: 1.6em;
-}
-
-/* Cards gerais */
-.card {
-    border-left: 6px solid #7b1fa2;
-    padding: 18px 22px;
-    border-radius: 10px;
-    margin: 10px 0 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-size: 1.2em;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Cards diferenciados por tipo */
-#minicontos .card {
-    background-color: #ffe0b2;
-    border-left-color: #fb8c00;
-}
-
-#microcontos .card {
-    background-color: #c8e6c9;
-    border-left-color: #43a047;
-}
-
-#nanocontos .card {
-    background-color: #bbdefb;
-    border-left-color: #1e88e5;
-}
-
-.pergunta {
-    margin: 20px 0;
-    padding: 18px;
-    border-radius: 10px;
-    background: #f3e5f5;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.pergunta p {
-    margin-bottom: 12px;
-}
-
-.pergunta button {
-    display: block;
-    margin: 6px 0;
+    position: fixed;
+    z-index: 1;
     width: 100%;
-    text-align: left;
-    background: #7b1fa2;
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.pergunta button:hover {
-    background: #4a148c;
-}
-
-.pergunta button.correto {
-    background: #4caf50 !important;
-    animation: piscarVerde 0.5s 2;
-}
-
-.pergunta button.errado {
-    background: #e53935 !important;
-    animation: piscarVermelho 0.5s 2;
-}
-
-@keyframes piscarVerde {
-
-    0%,
-    100% {
-        background-color: #4caf50;
-    }
-
-    50% {
-        background-color: #a5d6a7;
-    }
-}
-
-@keyframes piscarVermelho {
-
-    0%,
-    100% {
-        background-color: #e53935;
-    }
-
-    50% {
-        background-color: #ef9a9a;
-    }
-}
-
-.resultado {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 1.3em;
+    min-height: 100vh;
+    padding: 42px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-.botao-final {
-    margin: 20px auto;
-    display: block;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 10px;
-    background: #311b92;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+h1 {
+    color: #e3be19a0;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-top: -750px;
+    text-shadow: 0 2px 8px #000;
 }
 
-.botao-final:hover {
-    background: #1a237e;
+.cifra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #e3be19a0;
+    font-size: 18px;
+    line-height: 1.2;
+    text-shadow: 0 2px 7px #000, 0 0 4px #000;
 }
 
-/* Footer sempre no final */
+.cifra p {
+    min-width: 90px;
+}
+
+.cifra span {
+    display: inline-block;
+    margin: 0 12px;
+    color: #b99b21;
+}
+
+.link-final {
+    margin-top: 30px;
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.link-final:hover {
+    color: #e3be19a0;
+}
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #4a148c;
-    color: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-footer {
-    display: none;
-    /* escondido por padrão */
-}
-
-#quiz footer {
-    display: block;
-    /* aparece apenas na aba do quiz */
-}
-
-.barra-progresso {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    background-color: #ddd;
-    border-radius: 20px;
-    margin: 15px 0;
-    height: 15px;
-    overflow: hidden;
+    z-index: 2; /* Mantém o footer visível por cima da div .conteudo */
+    text-align: center;
+    padding: 15px 20px;
 }
 
-#progresso {
-    width: 0%;
-    height: 100%;
-    background-color: #7b1fa2;
-    transition: width 0.5s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+@media (max-width: 600px) {
+    .escaravelho {
+        width: 105vw;
+        height: 88vh;
+        opacity: 0.27;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media(max-width:600px) {
-    nav {
-        flex-direction: column;
+    .conteudo {
+        padding: 30px 12px;
     }
 
-    .card,
-    .pergunta button {
-        font-size: 1em;
+    h1 {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .cifra {
+        font-size: 18px;
+        gap: 4px;
+    }
+
+    .link-final {
+        margin-top: 24px;
+        color: #131313;
+    }
+
+    .link-final:hover {
+    color: #bea63b;
     }
 }
